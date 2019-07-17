@@ -1,0 +1,25 @@
+{
+  "name": "svg2tjs",
+  "version": "0.0.1",
+  "description": "svg files transform to js files",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js -s test/*.svg -d dist"
+  },
+  "bin": {
+    "svg2js": "index.js"
+  },
+  "files": ["index.js","gulpfile.js","src"],
+  "keywords": [],
+  "author": "spring",
+  "license": "ISC",
+  "devDependencies": {
+    "commander": "^2.20.0",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-svgmin": "^2.2.0",
+    "gulp-svgstore": "^7.0.1",
+    "minimist": "^1.2.0",
+    "through2": "^3.0.1"
+  }
+}
