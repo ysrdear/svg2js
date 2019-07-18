@@ -2,6 +2,7 @@
 const program = require('commander')
 const version = require('./package').version
 const exec = require('child_process').exec
+const path = require('path')
 
 program.version(version)
     .usage('[options] <file ...>')
