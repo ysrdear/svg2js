@@ -19,8 +19,8 @@ gulp.task('combine',function(){
 });
 
 //svg -> js
-const pre = 'var svg = `'
-const next = '`; document.body.insertAdjacentHTML(\'afterBegin\', \'<div style=\"display:none;\"> +svg+ </div>\');'
+const pre = 'var svg = \''
+const next = '\'; document.body.insertAdjacentHTML(\'afterBegin\', \'<div style=\"display:none;\"> \'+ svg + \'</div>\');'
 
 gulp.task('default', ['combine'],(cb) => {
     //读取文件转js

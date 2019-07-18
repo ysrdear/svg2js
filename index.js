@@ -10,5 +10,13 @@ program.version(version)
     .option('-n , --name <name>', '目标文件名称' , 'dist')
     .parse(process.argv);
 
+//set path
+const cwd = process.cwd()
+
+let src = path.resolve(cwd,  program.src )
+let dist = path.resolve(cwd , program.dist)
+let configfile = path.resolve(__dirname, 'gulpfile.js')
+
+
 //gulp
-exec('gulp --gulpfile gulpfile.js -s '+ program.src +'  -d '+ program.dist + ' -n ' + program.name);
+exec('gulp --gulpfile '+ configfile +' -s '+ src +'  -d '+ dist + ' -n ' + program.name);

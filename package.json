@@ -1,15 +1,15 @@
 {
   "name": "svg2tjs",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "svg files transform to js files",
   "main": "index.js",
   "scripts": {
     "test": "node index.js -s test/*.svg -d dist"
   },
   "bin": {
-    "svg2js": "index.js"
+    "svg2tjs": "index.js"
   },
-  "files": ["index.js","gulpfile.js","src"],
+  "files": ["index.js","gulpfile.js","test"],
   "keywords": [],
   "author": "spring",
   "license": "ISC",
