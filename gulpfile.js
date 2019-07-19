@@ -12,15 +12,19 @@ let argv = minimist((process.argv.slice(2)));
 //编译svg
 gulp.task('combine',function(){
     return gulp.src(argv.s)
-        .pipe(svgmin())
+        .pipe(svgmin({
+            plugins: [{
+                removeDimensions: true
+            }]
+        }))
         .pipe(svgstore({ inlineSvg: true }))
         .pipe(rename(argv.n + '.svg'))
         .pipe(gulp.dest(argv.d))
 });
 
 //svg -> js
-const pre = 'var svg = \''
-const next = '\'; document.body.insertAdjacentHTML(\'afterBegin\', \'<div style=\"display:none;\"> \'+ svg + \'</div>\');'
+const pre = '(function(){var svg = \''
+const next = '\'; document.body.insertAdjacentHTML(\'afterBegin\', \'<div style=\"display:none;\"> \'+ svg + \'</div>\');}())'
 
 gulp.task('default', ['combine'],(cb) => {
     //读取文件转js
